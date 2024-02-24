@@ -1,23 +1,386 @@
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <title>Strona główna</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <title>Strona główna</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
 </head>
 <body>
-    <header>
-        <h1>Witaj na stronie głównej</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Strona główna</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="galeria.html">Galeria</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <h2>Witaj na stronie głównej</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+  <pre><code class="python">
+    #0################ KOMENTARZE ################
+
+    #Komentarz jednoliniowy
+
+    '''
+    Komentarz blokowy
+    Komentarz blokowy
+    '''
+
+    #1################ ZMIENNE ################
+    '''
+    W programowaniu jest wiele rodzajów zmiennych. Przechowują one różne typy danych.
+    W Pythonie trzeba deklarować typu zmiennej, gdyż Python sam rozpoznaje jej typ.
+    '''
+
+    # --------
+    #Int - integier tj. liczbowa całkowita
+    age = 21; 
+
+    # --------
+    #Float - floating point tj. liczba zmiennoprzecinkowa
+    height = 1.80;
+
+    # --------
+    #String - ciąg znaków
+    name = "Jan";
+
+    # --------
+    #Bool - boolean tj. wartość logiczna (prawda/fałsz)
+    isStudent = true;
+    
+    #2.1################ OPERATORY PROSTE ################
+
+    a = 5;          #Przypisanie
+    b = 3;          #Przypisanie
+    c = a + b;      #Dodawanie
+    d = a - b;      #Odejmowanie
+    e = a * b;      #Mnożenie
+    f = a / b;      #Dzielenie
+    g = a % b;      #Reszta z dzielenia
+    h = a ** b;     #Potęgowanie
+    i = a // b;     #Dzielenie całkowite
+
+    #2.2################ OPERATORY WARUNKOWE ################
+    '''
+    Operatory warunkowe są używane do porównywania dwóch wartości.
+    Wynik operacji warunkowej zwraca wartość logiczną (prawda/fałsz).
+    '''
+
+    j = a == b;     #Porównanie
+    k = a != b;     #Negacja
+    l = a > b;      #Większe
+    m = a < b;      #Mniejsze
+    n = a >= b;     #Większe lub równe
+    o = a <= b;     #Mniejsze lub równe
+    p = a and b;    #Operacja AND
+    q = a or b;     #Operacja OR
+    r = not a;      #Negacja ~
+    y = a in b;     #Czy a jest w liście b
+    z = a not in b; #Czy a nie jest w liście b
+
+    #2.3################ OPERATORY BITOWE ################
+    '''
+    Operatory bitowe są używane do wykonywania operacji bitowych na liczbach binarnych.
+    Wynik operacji bitowej zwraca liczbę całkowitą.
+
+    Różnią się od zwykłych operacji arytmetycznych tym że operują na poszczególnych bitach tj 0 i 1 a nie na wartościach jakie one przechowują.
+    Najlepiej tego używać przy operowaniu typem BOOLEAN, reszta typów zwróci nieoczekiwane wyniki.
+    '''
+
+    s = a & b;      #Operacja AND
+    t = a | b;      #Operacja OR
+    u = ~a;         #Negacja ~
+    v = a ^ b;      #Operacja XOR
+    w = a << b;     #Przesunięcie bitowe w lewo
+    x = a >> b;     #Przesunięcie bitowe w prawo
+
+    #2.4################ OPERATORY PRZYPISANIA ################
+    '''
+    Operatory przypisania są używane do przypisywania wartości do zmiennych.
+    Wartość zmiennej jest równa wartości wyrażenia po prawej stronie operatora.
+
+    Takie operatory jak +=, -=, *= są skróconymi wersjami operacji arytmetycznych. 
+    Oznaczają one, że do zmiennej a dodajemy wartość stojącą za znakiem =, a nie nadpisujemy.
+    Np a += 3 to to samo co a = a + 3.
+    '''
+
+    a = 5;          #Przypisanie
+    a += 3;         #Dodawanie
+    a -= 3;         #Odejmowanie
+    a *= 3;         #Mnożenie
+    a /= 3;         #Dzielenie
+    a %= 3;         #Reszta z dzielenia
+    a **= 3;        #Potęgowanie
+    a //= 3;        #Dzielenie całkowite
+    a &= 3;         #Operacja AND
+    a |= 3;         #Operacja OR
+    a ^= 3;         #Operacja XOR
+    a <<= 3;        #Przesunięcie bitowe w lewo
+    a >>= 3;        #Przesunięcie bitowe w prawo
+
+    ################# KONWERSJE ################
+    # Jeśli chcemy zmienić typ zmiennej na inny to używamy konwersji. Nie wszystko da się skonwertować na dany typ.
+
+    a = int(2.8);      #a = 2 ~ Zaokrągla w dół
+    b = float(2);      #b = 2.0
+    c = str(2);        #c = "2"
+    d = bool(2);       #d = True ~ Wszystko co nie jest 0 jest True
+    e = bool(0);       #e = False
+    f = bool("Hello"); #f = True ~ Wszystko co nie jest puste jest True
+    g = bool("");      #g = False
+    h = bool([]);      #h = False ~ Wszystko co nie jest puste jest True
+    i = bool([1, 2]);  #i = True
+    j = list("Hello"); #j = ['H', 'e', 'l', 'l', 'o']
+
+    # ################ Wartości specjalne i puste ################
+    '''
+    Wartości te są używane do oznaczenia braku wartości lub pustego obiektu.
+    Używa są używane jako wartości początkowe zmiennych, lub w sytuacji, gdzie chcemy się upewnić, że nie powstanie błąd.
+    '''
+
+    a = None;          #Brak wartości
+    b = "";            #Pusty string
+    c = 0;             #Zero
+    i = 0.0;           #Zero zmiennoprzecinkowe
+
+    d = False;         #False
+    e = [];            #Pusta lista
+    f = ();            #Pusta krotka
+    g = {};            #Pusty słownik
+    h = set();         #Pusty zbiór
+    
+    j = 0j;            #Zero zespolone
+    k = 0b0;           #Zero binarne
+    l = 0o0;           #Zero ósemkowe
+    m = 0x0;           #Zero szesnastkowe
+    n = 0.0;           #Zero zmiennoprzecinkowe
+    o = 0e0;           #Zero zmiennoprzecinkowe
+
+    ################# WEJŚCIE/WYJŚCIE ################
+
+    # --------
+    # print wypisuje wartości na ekranie
+    print("Hello, World!");
+
+    # --------
+    # print z end deklaruje co ma być na końcu wypisanego tekstu
+    print("Hello, World!", end=" ");
+
+    # --------
+    # print z sep deklaruje co ma być między wypisanymi wartościami
+    print("Hello, World!", sep=",");
+
+    # --------
+    # input pobiera wartości od użytkownika
+    x = input("Wpisz coś: ");
+    print("Wpisałeś: " + x);
+
+    #3################ LISTY ################
+    
+    # --------
+    #List/array - lista tj. tablica. Można ją modyfikować.
+    fruits = ["apple", "banana", "cherry"];
+    numbers = [1, 2, 3, 4, 5];
+
+    numbers[0];              #Odczyt wartości zaczynamy od 0, nie od 1
+    numbers[0] = 6;          #Zmiana wartości
+    numbers.append(7);       #Dodanie wartości
+    numbers.remove(3);       #Usunięcie wartości
+
+    # --------
+    #Tuple - krotka. Jest podobna do listy ale nie można jej modyfikować.
+    cars = ("Ford", "Volvo", "BMW");
+    numbers = (1, 2, 3, 4, 5);
+
+    numbers[0];              #Odczyt wartości
+    numbers[0] = 6;          #Zmiana wartości ~ Błąd
+    numbers.append(7);       #Dodanie wartości ~ Błąd
+    numbers.remove(3);       #Usunięcie wartości ~ Błąd
+
+    # --------
+    #Set - zbiór. Jest podobny do listy ale nie może zawierać duplikatów.
+    fruits = {"apple", "banana", "cherry"};
+
+    fruits["apple"];         #Odczyt wartości
+    fruits.add("orange");    #Dodanie wartości
+    fruits.remove("banana"); #Usunięcie wartości
+
+    # --------
+    #Dict - dictionary tj. słownik (klucz:wartość). Różny się od listy tym że ma klucze, które są unikalne i do których możemy się odwoływać aby uzyskać wartość mu przypisaną.
+    person = {"name": "John", "age": 36, "country": "Norway"};
+
+    person.get("name");      #Odczyt wartości
+    person["name"];          #Odczyt wartości
+    person["age"] = 40;      #Zmiana wartości
+    person.pop("age");       #Usunięcie wartości
+    person.clear();          #Usunięcie wszystkich wartości
+    
+    #4################ INSTRUKCJE WARUNKOWE ################
+    '''
+    Pętle w Pythonie są używane do wykonywania tych samych instrukcji wielokrotnie, aż do spełnienia określonego warunku. 
+    Jeśli warunki nie są spełnione, to kod nie jest wykonywany i przechodzi do następnego warunku lub do kodu, jeśli nie ma więcej warunków.
+    '''
+    
+    # --------
+    '''
+    Pętla if, wykonuje się, gdy warunek jest prawdziwy.
+    Jest to pierwszy rodzaj pętli warunkowej, od którego zawsze zaczynamy sprawdzanie warunków.
+    Może być tylko jeden if na daną sytuację.
+    '''
+
+    if a > b:
+      print("a jest większe od b");
+
+    # --------
+    '''
+    Drugim rodzajem jest pętla elif, która wykonuje się, gdy poprzedni warunek nie jest prawdziwy.
+    Podajemy w niej warunek do spełnienia. 
+    ifelse może być wiele.
+    '''
+
+    if a > b:
+      print("a jest większe od b");
+
+    elif a < b:
+      print("a jest mniejsze od b");
+
+    elif a == b:
+      print("a jest równe b");
+
+    # --------
+    '''
+    Trzecim rodzajem jest pętla else, która wykonuje się, gdy żaden z poprzednich warunków nie jest nie jest prawdziwy. 
+    Nie podajemy w niej warunku.
+    '''
+
+    if a > b:
+      print("a jest większe od b");
+
+    elif a < b:
+      print("a jest mniejsze od b");
+
+    elif a == b:
+      print("a jest równe b");
+
+    else:
+      print("a jest równe b");
+
+    ################# PĘTLE ################
+    # --------
+    # Dobrą praktyką jest dawanie pustej lini przed i po funkcji.
+
+    #Pętla for in range, która wykonuje się określoną ilość razy. Range tutaj oznacza ilość powtórzeń zaczynając od 0 aż do 5.
+
+    for x in range(6):
+      print(x);
+
+    # --------
+    #Pętla for in list wykonuje się tyle razy ile jest elementów w liście. x w tym przypadku przyjmuje wartości z listy fruits.
+
+    fruits = ["apple", "banana", "cherry"];
+
+    for x in fruits:
+      print(x);
+
+    # --------
+    '''
+    Pętla while wykonuje się tak długo jak długo spełniony jest warunek. W tym przypadku i zaczyna od 0 i kończy na 5.
+    W tym przypadku pod koniec każdej pętli i jest zwiększane o 1.
+    Pętla sprawdza przed każdym wykonaniem czy warunek jest spełniony. 
+    
+    W pętli piątej, kiedy x = 5 i pod koniec zmieni się na x = 6 przy pomocy x += 1 to while sprawdza warunek i widzi że nie jest spełniony i kończy pętlę.
+    '''
+    i = 0;
+    while i < 6:
+      print(i);
+      i += 1;
+    
+    #5################ FUNKCJE ################
+    '''
+    Każda funkcja zaczyna się od słowa kluczowego def.
+    Potem dajemy nawę funkcji a za nią nawiasy, w których podajemy argumenty. Ich ilośc może być dowolna. Na samym końcu dajemy :.
+
+    Co jest wewnątrz funkcji musi być wcięte innaczej Python uzna to za kod poza funkcją.
+    
+    Wywołanie funkcji w kodzie odbywa się poprzez podanie jej nazwy i przekazanie jej argumentów w nawiasach.
+
+    Funkcje powinny zwracać wartość.
+    Dobrą praktyką jest dawanie pustej lini przed i po funkcji, a także przed returnem.
+    '''
+
+    # --------
+    def add(a, b):
+      return a + b;
+
+    print(add(5, 3));
+
+    # --------
+    def sub(a, b):
+      return a - b;
+
+    print(sub(5, 3));
+
+    ################# MODUŁY ################
+    '''
+    Moduły są używane do organizowania kodu w Pythonie.
+    Jest to plik zawierający zestaw funkcji, klas, obiektów, które chcemy wykorzystać w naszym kodzie.
+
+    Mogą one pobierać te zestawy z naszych innych plików, lub z wbudowanych modułów Pythona takich jak math, platform, sys, itp.
+    '''
+
+    #--------
+    #Importowanie modułu. Trzeba używać modul.nazwa_funkcji aby odwołać się do funkcji z modułu.
+    import mymodule;
+    mymodule.greeting("Jonathan");
+
+    #--------
+    #Importowanie modułu z użyciem aliasu, aby przyspieszyć pisanie
+    import mymodule as mx;
+    a = mx.person1["age"];
+
+    #--------
+    #Importowanie modułu z wbudowanych modułów Pythona
+    import math;
+    x = math.log(3, 4);
+    print(x);
+
+    #--------
+    #Importowanie tylko jednej funkcji z modułu
+    from mymodule import person1;
+    print (person1["age"]);
+
+    #--------
+    #Importowanie wszystkich funkcji z modułu bez konieczności pisania mymodule.nazwa_funkcji za każdym razem tylko nazwa_funkcji
+    from mymodule import *;
+    print (person1["age"]);
+    
+    ################# KLASY ################
+
+    '''
+    Klasy są używane do tworzenia obiektów.
+    Obiekt to instancja klasy. Tworząc klasę tworzymy jedynie szablon, który tworzone obiekty będą musiały spełniać.
+
+    W klasie możemy zdefiniować atrybuty (zmienne) i metody (funkcje).
+    '''
+
+    class Person:
+      def __init__(self, name, age):
+        self.name = name;
+        self.age = age;
+
+      def myfunc(self):
+        print("Hello my name is " + self.name);
+    
+    p1 = Person("John", 36);
+    p1.myfunc();
+
+    ################# WYJĄTKI ################
+
+    try:
+      print(z);
+    except NameError:
+      print("Zmienna z nie istnieje");
+    except:
+      print("Coś poszło nie tak");
+    else:
+      print("Wszystko jest ok");
+    finally:
+      print("Koniec");
+
+  </code></pre>
 </html>
